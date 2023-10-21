@@ -51,6 +51,12 @@ int run_all_app()
 		/*
 		* LAB1: you may need to initialize your new fields of proc here
 		*/
+		struct taskinfo *taskinfo = p->taskinfo;
+		taskinfo->status = Ready;
+		memset((void *)taskinfo->syscall_times, 0, sizeof(taskinfo->syscall_times));
+		taskinfo->time = 0;
+
+		// struct timeval *start_time = p->start_time;
 	}
 	return 0;
 }
